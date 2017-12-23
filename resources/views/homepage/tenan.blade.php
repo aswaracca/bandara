@@ -10,7 +10,8 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="{{asset('home/css/materialize.css')}}" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="{{asset('home/css/style.css')}}" type="text/css" rel="stylesheet" media="screen,projection"/>
-
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+  
 
 <!-- background -->
 <style type="text/css" media="screen">
@@ -443,7 +444,6 @@
 <!-- tombol navigasi end -->
 
 <!-- Autocomplete -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
 <script src="{{asset('home/js/vpqzwe.js')}}"></script>
 <script  src="{{asset('home/js/index.js')}}"></script>
 <!-- Autocomplete end -->
