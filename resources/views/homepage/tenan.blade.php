@@ -211,7 +211,7 @@
           @foreach($data as $video)
             <div data-p="170.00">
                 <video id="video{{$video->id_tenan}}" width="100%" autoplay="" loop muted>
-                    <source src="{{asset('home/assets/video/'.$video->map)}}" type="video/mp4">
+                    <source src="{{asset('images/map/'.$video->map)}}" type="video/mp4">
                 </video>
                 <!-- <img data-u="thumb" src="assets/img-tenan/1.png" /> -->
             </div>
@@ -249,14 +249,23 @@
       echo "var vid".$video->id_tenan."= document.getElementById('video".$video->id_tenan."');";
      } ?>
     
-    function enableAutoplay() {
+     function viewDataPopuler(idtenan){
+      alert(idtenan);
+     }
+
+    function enableAutoplay(identitas) {
     <?php foreach($data as $video){ 
        //looping by id  
+      echo "if(identitas == ".$video->id_tenan."){";
       echo "vid".$video->id_tenan.".autoplay = true;";
       echo "vid".$video->id_tenan.".load();";
+      echo "viewDataPopuler(".$video->id_tenan.")";
+
+      echo "}";
       // batas looping
       }?>
     }
+
   </script>
   <!-- slider end -->
 
@@ -273,31 +282,21 @@
                                                 <li class="collection-item" style="border: 5px;"> 
                                                       <a class='dropdown-button btn' href='#' data-activates='dropdown1' style="width: 101%; background-color: #16A2E7FF;">Select Category</a> <hr> <!-- Dropdown Structure -->
                                                           <ul id='dropdown1' class='dropdown-content'>
-                                                            <li><a href="#!"><i class="material-icons">view_module</i>R & B</a></li>
-                                                            <li><a href="#!"><i class="material-icons">airplay</i>Retails</a></li>
-                                                            <li><a href="#!"><i class="material-icons">apps</i>Services</a></li>
-                                                            <li><a href="#!"><i class="material-icons">beenhere</i>Supports</a></li>
+                                                            <li><a href="{{url('tenan/all')}}"><i class="material-icons">home</i>Semua Kategori</a></li>
+                                                            <li><a href="{{url('tenan/rnb')}}"><i class="material-icons">view_module</i>R & B</a></li>
+                                                            <li><a href="{{url('tenan/retails')}}"><i class="material-icons">airplay</i>Retails</a></li>
+                                                            <li><a href="{{url('tenan/services')}}"><i class="material-icons">apps</i>Services</a></li>
+                                                            <li><a href="{{url('tenan/supports')}}"><i class="material-icons">beenhere</i>Supports</a></li>
                                                           </ul>                                                   
                                                      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="  Type Text..." class="white" style="font-size: 24px; background-color: "> 
                                                 </li>
                                                     
                                                 <div class='hidden-scrollbar'>
                                                     <div class='inner-search'>
-                                                        <ul id="myUL" class="collection" style="margin-top: 0px; margin-bottom: 0px;">  
-                                                                <li onclick="enableAutoplay()"><a href="#">Excelso</a></li>
-                                                                  <li onclick="enableAutoplay()"><a href="#" >KFC</a></li>
-                                                                  <li onclick="enableAutoplay()"><a href="#">Mcdonadls</a></li>
-                                                                  <li onclick="enableAutoplay()"><a href="#">AW</a></li>
-                                                                  <li onclick="enableAutoplay()"><a href="#">Solaria</a></li>
-                                                                  <li onclick="enableAutoplay()"><a href="#">Dunkin Danust</a></li>
-                                                                  <li onclick="enableAutoplay()"><a href="#">Pezzo</a></li>                                            
-                                                                  <li onclick="enableAutoplay()"><a href="#">Zomato</a></li>                                            
-                                                                  <li onclick="enableAutoplay()"><a href="#">Restoran Sederhana</a></li>                                            
-                                                                  <li onclick="enableAutoplay()"><a href="#">Cindy</a></li>                                            
-                                                                  <li onclick="enableAutoplay()"><a href="#">Cindy</a></li>                                            
-                                                                  <li onclick="enableAutoplay()"><a href="#">Cindy</a></li>                                            
-                                                                  <li onclick="enableAutoplay()"><a href="#">Cindy</a></li>                                            
-                                                                  <li onclick="enableAutoplay()"><a href="#">Cindy</a></li>                                            
+                                                        <ul id="myUL" class="collection" style="margin-top: 0px; margin-bottom: 0px;">
+                                                          @foreach($data as $video)  
+                                                            <li onclick="enableAutoplay({{$video->id_tenan}})"><a href="#">{{$video->nama}}</a></li>
+                                                          @endforeach
                                                         </ul>                                                                                   
                                                     </div>
                                                 </div>
@@ -391,7 +390,7 @@
                         </span>
                     </div>            
                         <div class="col s2 waves-effect waves-light" onclick="Materialize.toast('Way Finding', 4000,'',function(){alert('Your toast was dismissed')})">
-                          <a href="tenan.html" title="">
+                          <a href="{{url('tenan/all')}}" title="">
                            <div class="blue darken-4 z-depth-5" style="text-align: center; padding-top: 15px; padding-bottom: 1px; ">  
                                     <i class="material-icons small white-text">search</i>
                                     <p class="promo-caption white-text"><b>WAY FINDING</b></p>                

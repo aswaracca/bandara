@@ -15,8 +15,12 @@ class HomePageController extends Controller
         return view('homepage.beranda',compact('news','profil'));
     }
 
-    public function viewTenan(){
-        $data = TenanModel::where('status','show')->orderBy('nama','asc')->get();
+    public function viewTenan($kategori){
+        if($kategori == 'all')
+            $data = TenanModel::where('status','show')->orderBy('nama','asc')->get();
+        elseif($kategori !='all')
+            $data = TenanModel::where('status','show')->where('kategori',$kategori)->orderBy('nama','asc')->get();
+            
         return view('homepage.tenan',compact('data'));
     }
 
