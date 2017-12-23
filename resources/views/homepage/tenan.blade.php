@@ -209,7 +209,7 @@
           <!-- looping by id -->
             <div data-p="170.00">
                 <video id="video1" width="100%" autoplay="" loop muted>
-                    <source src="assets/video/slide2.mp4" type="video/mp4">
+                    <source src="{{asset('home/assets/video/slide2.mp4')}}" type="video/mp4">
                 </video>
                 <!-- <img data-u="thumb" src="assets/img-tenan/1.png" /> -->
             </div>
@@ -444,25 +444,25 @@
 
 <!-- Autocomplete -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
-<script src='js/vpqzwe.js'></script>
-<script  src="js/index.js"></script>
+<script src="{{asset('home/js/vpqzwe.js')}}"></script>
+<script  src="{{asset('home/js/index.js')}}"></script>
 <!-- Autocomplete end -->
 
 
     <!-- preloading -->
-      <script type="text/javascript" src="js/putar.js" ></script>
+      <script type="text/javascript" src="{{asset('home/js/putar.js')}}" ></script>
 
     <!-- preloading END -->
   <!--  Scripts-->
-  <!-- <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script> -->
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/hammer.min.js"></script>
+  <!-- <script src="{{asset('home/https://code.jquery.com/jquery-2.1.1.min.js')}}"></script> -->
+  <script src="{{asset('home/js/materialize.js')}}"></script>
+  <script src="{{asset('home/js/init.js')}}"></script>
+  <script src="{{asset('home/js/hammer.min.js')}}"></script>
 
   <!-- tenan -->
      <!-- jQuery -->
-  <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> -->
-  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.min.js">\x3C/script>')</script>
+  <!-- <script src="{{asset('home/http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')}}"></script> -->
+  <script>window.jQuery || document.write('<script src="{{asset('home/js/libs/jquery-1.7.min.js')}}">\x3C/script>')</script>
 
 
   </body>
