@@ -23,6 +23,13 @@ class HomePageController extends Controller
             
         return view('homepage.tenan',compact('data'));
     }
+        public function populerTenan($id){
+            $tenan = TenanModel::find($id);
+
+            $tenan->lihat = $tenan->lihat+1;
+            $tenan->save();
+            return 'save';
+        }
 
     public function viewProfil(){
         $data = ProfileModel::find(1);

@@ -250,7 +250,9 @@
      } ?>
     
      function viewDataPopuler(idtenan){
-      alert(idtenan);
+          $.get("{{url('tenan/populer')}}/"+idtenan,function(data, status){
+              console.log(data);
+          });
      }
 
     function enableAutoplay(identitas) {

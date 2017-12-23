@@ -34,6 +34,7 @@ class TenanController extends Controller
 	        $tenan->nama 	= ucwords($request->nama);
 	        $tenan->status 	= $request->status;
 	        $tenan->kategori 	= $request->kategori;
+	        $tenan->lihat 	= '0';
 
 	   		if($request->hasFile('logo')){
 
