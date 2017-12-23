@@ -34,3 +34,18 @@
 #myUL li a:hover:not(.header) {
   background-color: #eee;
 }
+
+#myUL div li a:hover:not(.header) {
+  background-color: #66B8FFFF;
+}
+
+#myUL div li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #66B8FFFF;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
