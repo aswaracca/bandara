@@ -46,6 +46,16 @@
               </select>
             </div>
             <div class="form-group">
+              <label>Status</label>
+              <select class="form-control" name="kategori" required>
+                <option value="" disabled selected>Pilih Kategori</option>
+                <option value="rnb" <?php if ($detail->kategori =='rnb')echo 'selected';?>>R & B</option>
+                <option value="retails" <?php if ($detail->kategori =='retails')echo 'selected';?>>Retails</option>
+                <option value="services" <?php if ($detail->kategori =='services')echo 'selected';?>>Services</option>
+                <option value="support" <?php if ($detail->kategori =='support')echo 'selected';?>>Support</option>
+              </select>
+            </div>
+            <div class="form-group">
               <label>Gambar Logo</label>
               <input type="file" name="logo" class="form-control">
               <span>*Input untuk mengganti</span>

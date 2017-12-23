@@ -23,6 +23,7 @@ class TenanController extends Controller
 	    	// give image uploded a name with extension
     		$this->validate($request, [
 	   			'nama' 		=> 'required|max:100',
+	            'kategori' 	=> 'required',
 	            'map' 		=> 'required',
 	            'logo' 		=> 'required|image|mimes:jpeg,png,jpg,gif,svg,bmp,ico|max:2048',
 	   			'status' 	=> 'required',
@@ -32,6 +33,7 @@ class TenanController extends Controller
 
 	        $tenan->nama 	= ucwords($request->nama);
 	        $tenan->status 	= $request->status;
+	        $tenan->kategori 	= $request->kategori;
 
 	   		if($request->hasFile('logo')){
 
@@ -67,6 +69,7 @@ class TenanController extends Controller
 			$this->validate($request, [
 	   			'id_tenan' 	=> 'required|numeric',
 	   			'nama' 		=> 'required|max:100',
+	   			'kategori' 	=> 'required',
 	   			'status' 	=> 'required',
 	        ]);
 
@@ -75,6 +78,7 @@ class TenanController extends Controller
 
 	        $tenan->nama 	= $request->nama;
 	        $tenan->status 	= $request->status;
+	        $tenan->kategori 	= $request->kategori;
 
 
 	        if($request->hasFile('logo')){

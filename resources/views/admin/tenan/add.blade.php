@@ -45,6 +45,16 @@
               </select>
             </div>
             <div class="form-group">
+              <label>Status</label>
+              <select class="form-control" name="kategori" required>
+                <option value="" disabled selected>Pilih Kategori</option>
+                <option value="rnb">R & B</option>
+                <option value="retails">Retails</option>
+                <option value="services">Services</option>
+                <option value="support">Support</option>
+              </select>
+            </div>
+            <div class="form-group">
               <label>Gambar Logo</label>
               <input type="file" name="logo" class="form-control" required>
 
