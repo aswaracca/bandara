@@ -331,32 +331,32 @@
                                             
                                         <div class='hidden-scrollbar'>
                                             <div class='inner'>
-                                            <li class="collection-item dismissable">
+                                            <li class="collection-item dismissable" onclick="enableAutoplay()">
                                                 <div><a href="#">Alvin</a><a href="#!" class="secondary-content">
                                                     <i class="material-icons">grade</i></a>
                                                 </div>
                                             </li>
-                                            <li class="collection-item dismissable">
+                                            <li class="collection-item dismissable" onclick="enableAutoplay()">
                                                 <div><a href="#">Alvin</a><a href="#!" class="secondary-content">
                                                     <i class="material-icons">grade</i></a>
                                                 </div>
                                             </li>
-                                            <li class="collection-item dismissable">
+                                            <li class="collection-item dismissable" onclick="enableAutoplay()">
                                                 <div><a href="#">Alvin</a><a href="#!" class="secondary-content">
                                                     <i class="material-icons">grade</i></a>
                                                 </div>
                                             </li>
-                                            <li class="collection-item dismissable">
+                                            <li class="collection-item dismissable" onclick="enableAutoplay()">
                                                 <div><a href="#">Alvin</a><a href="#!" class="secondary-content">
                                                     <i class="material-icons">grade</i></a>
                                                 </div>
                                             </li>
-                                            <li class="collection-item dismissable">
+                                            <li class="collection-item dismissable" onclick="enableAutoplay()">
                                                 <div><a href="#">Alvin</a><a href="#!" class="secondary-content">
                                                     <i class="material-icons">grade</i></a>
                                                 </div>
                                             </li>
-                                            <li class="collection-item dismissable">
+                                            <li class="collection-item dismissable" onclick="enableAutoplay()">
                                                 <div><a href="#">Alvin</a><a href="#!" class="secondary-content">
                                                     <i class="material-icons">grade</i></a>
                                                 </div>
