@@ -16,10 +16,8 @@ class HomePageController extends Controller
     }
 
     public function viewTenan(){
-        $profil = ProfileModel::find(1);
-        $news = BeritaModel::take(3)->get();
         $data = TenanModel::where('status','show')->orderBy('nama','asc')->get();
-        return view('homepage.tenan',compact('data','news','profil'));
+        return view('homepage.tenan',compact('data'));
     }
 
     public function viewProfil(){

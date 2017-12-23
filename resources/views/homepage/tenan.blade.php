@@ -208,12 +208,14 @@
         </div>
         <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:380px;overflow:hidden;">
           <!-- looping by id -->
+          @foreach($data as $video)
             <div data-p="170.00">
-                <video id="video1" width="100%" autoplay="" loop muted>
-                    <source src="{{asset('home/assets/video/slide2.mp4')}}" type="video/mp4">
+                <video id="video{{$video->id_tenan}}" width="100%" autoplay="" loop muted>
+                    <source src="{{asset('home/assets/video/'.$video->map)}}" type="video/mp4">
                 </video>
                 <!-- <img data-u="thumb" src="assets/img-tenan/1.png" /> -->
             </div>
+          @endforeach
           <!-- batas looping by id -->
         </div>
 
@@ -243,13 +245,17 @@
 
     <script type="text/javascript">
       // looping sesuai id dari html
-    var vid1 = document.getElementById("video1");
+    <?php foreach($data as $video){ 
+      echo "var vid".$video->id_tenan."= document.getElementById('video".$video->id_tenan."');";
+     } ?>
     
     function enableAutoplay() {
+    <?php foreach($data as $video){ 
        //looping by id  
-      vid1.autoplay = true;
-      vid1.load();
+      echo "vid".$video->id_tenan.".autoplay = true;";
+      echo "vid".$video->id_tenan.".load();";
       // batas looping
+      }?>
     }
   </script>
   <!-- slider end -->
