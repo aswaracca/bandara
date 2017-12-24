@@ -401,10 +401,10 @@
                         </div>
 
                         <div class="col s2 waves-effect waves-light" onclick="Materialize.toast('Flight Shedule', 4000,'',function(){alert('Your toast was dismissed')})">
-                          <a href="flight.html" title="">
+                          <a href="{{url('jadwal')}}" title="">
                            <div class="blue darken-4 z-depth-5" style="text-align: center; padding-top: 15px; padding-bottom: 1px; ">   
-                                    <i class="material-icons small white-text">flight_takeoff</i>
-                                    <p class="promo-caption white-text"><b>FLIGHT SCHEDULE</b></p>                
+                                <i class="material-icons small white-text">flight_takeoff</i>
+                                <p class="promo-caption white-text"><b>FLIGHT SCHEDULE</b></p>                
                             </div>
                             </a>
                         </div>
