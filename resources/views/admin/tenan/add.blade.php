@@ -48,7 +48,7 @@
               <label>Status</label>
               <select class="form-control" name="kategori" required>
                 <option value="" disabled selected>Pilih Kategori</option>
-                <option value="rnb">R & B</option>
+                <option value="rnb">F & B</option>
                 <option value="retails">Retails</option>
                 <option value="services">Services</option>
                 <option value="support">Support</option>
@@ -56,7 +56,7 @@
             </div>
             <div class="form-group">
               <label>Gambar Logo</label>
-              <input type="file" name="logo" class="form-control" required>
+              <input type="file" name="logo" class="form-control">
 
               <p class="help-block">Max. 1 MB File Image</p>
             </div>

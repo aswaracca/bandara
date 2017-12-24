@@ -194,7 +194,7 @@
         
         <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:380px;overflow:hidden;">
             <div data-p="170.00">
-                 <img data-u="image" src="assets/images/index.png" />
+                 <img data-u="image" src="{{asset('assets/images/index.png')}}" />
             </div>
         </div>
 
