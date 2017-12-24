@@ -21,8 +21,9 @@ class HomePageController extends Controller
             $data = TenanModel::where('status','show')->orderBy('nama','asc')->get();
         elseif($kategori !='all')
             $data = TenanModel::where('status','show')->where('kategori',$kategori)->orderBy('nama','asc')->get();
-            
-        return view('homepage.tenan',compact('data'));
+        
+        $populer = TenanModel::orderBy('lihat','desc')->limit(10)->get();
+        return view('homepage.tenan',compact('data','populer'));
     }
         public function populerTenan($id){
             $tenan = TenanModel::find($id);

@@ -25,7 +25,6 @@ class TenanController extends Controller
 	   			'nama' 		=> 'required|max:100',
 	            'kategori' 	=> 'required',
 	            'map' 		=> 'required',
-	            'logo' 		=> 'required|image|mimes:jpeg,png,jpg,gif,svg,bmp,ico|max:2048',
 	   			'status' 	=> 'required',
 	        ]);
 
@@ -46,6 +45,8 @@ class TenanController extends Controller
 		   		$pathFind = public_path('images/logo/'.$tenan->logo);
 		   		$pathSave = public_path('images/logo/thumb/'.$tenan->logo);
                 Image::make($pathFind)->resize(200, 200)->save($pathSave);
+			}else{
+				$tenan->logo = 'default.jpg';
 			}
 
 			if($request->hasFile('map')){
@@ -119,7 +120,9 @@ class TenanController extends Controller
 		$logo 		= public_path('images/logo/'.$tenan->logo);
 		$logothumb 	= public_path('images/logo/thumb/'.$tenan->logo);
     	$map 		= public_path('images/map/'.$tenan->map);
-		File::delete([$logo, $logothumb,$map]);
+		File::delete([$logo,$map]);
+		if($tenan->logo == 'default.jpg')
+		File::delete([$logothumb]);
 
 		$tenan->delete();
 

@@ -49,7 +49,7 @@
           padding-right:300px; /* Samakan dengan besar margin negatif */
         }
         .hidden-scrollbar .inner-search {
-          height:370px;
+          height:310px;
           overflow:auto;
           margin:15px -300px 15px 15px;
           padding-right:300px; /* Samakan dengan besar margin negatif */
@@ -195,49 +195,21 @@
     </div>
   
 
-  <div class="row" style="padding-bottom: 0px;">      
-        <div class="col s9" style="padding: 0px;">
-          <div class="row" style="padding-bottom: 0px;">                  
-          <div class="col s12" style="padding-bottom: 0px;">
-            <div class="collapsible-header white-text" style="background-color: #16A2E7FF; margin-top: 9px;"><i class="material-icons white-text">map</i>MAPS</div>
-                   <!-- slider -->
-        <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:480px;overflow:hidden;visibility:hidden;">
-        <!-- Loading Screen -->
-        <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
-            <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="{{asset('home/img/spin.svg')}}" />
-        </div>
-        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:380px;overflow:hidden;">
-          <!-- looping by id -->
-          @foreach($data as $video)
-            <div data-p="170.00">
-                <video id="video{{$video->id_tenan}}" width="100%" autoplay="" loop muted>
-                    <source src="{{asset('images/map/'.$video->map)}}" type="video/mp4">
-                </video>
-                <!-- <img data-u="thumb" src="assets/img-tenan/1.png" /> -->
+          <div class="row" style="padding-bottom: 0px;">      
+              <div class="col s9" style="padding: 0px;">
+                  <div class="row" style="padding-bottom: 0px;">                  
+                      <div class="col s12" style="padding-bottom: 0px;">
+                        <div class="collapsible-header white-text" style="background-color: #16A2E7FF; margin-top: 9px;"><i class="material-icons white-text">map</i>MAPS</div>
+                               <!-- slider -->
+                                @foreach($data as $video)
+                            <video  autoplay loop muted width="100%" height="500">
+                                <source src="{{asset('images/map/20171224042758.mp4')}}" type="video/mp4">
+                            </video>
+                               @endforeach
+                      </div>
+                  </div>
             </div>
-          @endforeach
-          <!-- batas looping by id -->
-        </div>
-
-        <!-- Arrow Navigator -->
-        <div data-u="arrowleft" class="jssora106" style="width:55px;height:55px;top:162px;left:30px;" data-scale="0.75">
-            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
-                <circle class="c" cx="8000" cy="8000" r="6260.9"></circle>
-                <polyline class="a" points="7930.4,5495.7 5426.1,8000 7930.4,10504.3 "></polyline>
-                <line class="a" x1="10573.9" y1="8000" x2="5426.1" y2="8000"></line>
-            </svg>
-        </div>
-        <div data-u="arrowright" class="jssora106" style="width:55px;height:55px;top:162px;right:30px;" data-scale="0.75">
-            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
-                <circle class="c" cx="8000" cy="8000" r="6260.9"></circle>
-                <polyline class="a" points="8069.6,5495.7 10573.9,8000 8069.6,10504.3 "></polyline>
-                <line class="a" x1="5426.1" y1="8000" x2="10573.9" y2="8000"></line>
-            </svg>
-        </div>
-    </div>
-          </div>
-        </div>
-        </div>
+        
 
         <!-- slider -->
         <script type="text/javascript">jssor_1_slider_init();</script>
@@ -261,7 +233,7 @@
       echo "if(identitas == ".$video->id_tenan."){";
       echo "vid".$video->id_tenan.".autoplay = true;";
       echo "vid".$video->id_tenan.".load();";
-      echo "viewDataPopuler(".$video->id_tenan.")";
+      echo "viewDataPopuler(".$video->id_tenan.");";
 
       echo "}";
       // batas looping
@@ -285,7 +257,7 @@
                                                       <a class='dropdown-button btn' href='#' data-activates='dropdown1' style="width: 101%; background-color: #16A2E7FF;">Select Category</a> <hr> <!-- Dropdown Structure -->
                                                           <ul id='dropdown1' class='dropdown-content'>
                                                             <li><a href="{{url('tenan/all')}}"><i class="material-icons">home</i>Semua Kategori</a></li>
-                                                            <li><a href="{{url('tenan/rnb')}}"><i class="material-icons">view_module</i>R & B</a></li>
+                                                            <li><a href="{{url('tenan/rnb')}}"><i class="material-icons">view_module</i>F & B</a></li>
                                                             <li><a href="{{url('tenan/retails')}}"><i class="material-icons">airplay</i>Retails</a></li>
                                                             <li><a href="{{url('tenan/services')}}"><i class="material-icons">apps</i>Services</a></li>
                                                             <li><a href="{{url('tenan/supports')}}"><i class="material-icons">beenhere</i>Supports</a></li>
@@ -297,7 +269,7 @@
                                                     <div class='inner-search'>
                                                         <ul id="myUL" class="collection" style="margin-top: 0px; margin-bottom: 0px;">
                                                           @foreach($data as $video)  
-                                                            <li onclick="enableAutoplay({{$video->id_tenan}})"><a href="#">{{$video->nama}}</a></li>
+                                                            <li onclick="enableAutoplay({{$video->id_tenan}})"><a href="javascript:;">{{$video->nama}}</a></li>
                                                           @endforeach
                                                         </ul>                                                                                   
                                                     </div>
@@ -333,41 +305,18 @@
                                <div class="card-content">                                                                    
                                     <ul class="collection">
                                         <li class="collection-item" style="background-color: #16a2e7;">
-                                            <a href="#"><h6 class="white-text" cstyle="margin-left: 24px; margin-right: 24px;"><b>POPULAR</b></h6></a>
+                                            <a href="javascript:;"><h6 class="white-text" cstyle="margin-left: 24px; margin-right: 24px;"><b>POPULAR</b></h6></a>
                                         </li>
                                             
                                         <div class='hidden-scrollbar'>
                                             <div class='inner'>
-                                            <li class="collection-item dismissable" onclick="enableAutoplay()">
-                                                <div><a href="#">Alvin</a><a href="#!" class="secondary-content">
+                                            @foreach($populer as $pop)
+                                            <li class="collection-item dismissable" onclick="enableAutoplay({{$pop->id_tenan}})">
+                                                <div><a href="javascript:;">{{ucwords($pop->nama)}}</a><a href="javascript:;" class="secondary-content">
                                                     <i class="material-icons">grade</i></a>
                                                 </div>
                                             </li>
-                                            <li class="collection-item dismissable" onclick="enableAutoplay()">
-                                                <div><a href="#">Alvin</a><a href="#!" class="secondary-content">
-                                                    <i class="material-icons">grade</i></a>
-                                                </div>
-                                            </li>
-                                            <li class="collection-item dismissable" onclick="enableAutoplay()">
-                                                <div><a href="#">Alvin</a><a href="#!" class="secondary-content">
-                                                    <i class="material-icons">grade</i></a>
-                                                </div>
-                                            </li>
-                                            <li class="collection-item dismissable" onclick="enableAutoplay()">
-                                                <div><a href="#">Alvin</a><a href="#!" class="secondary-content">
-                                                    <i class="material-icons">grade</i></a>
-                                                </div>
-                                            </li>
-                                            <li class="collection-item dismissable" onclick="enableAutoplay()">
-                                                <div><a href="#">Alvin</a><a href="#!" class="secondary-content">
-                                                    <i class="material-icons">grade</i></a>
-                                                </div>
-                                            </li>
-                                            <li class="collection-item dismissable" onclick="enableAutoplay()">
-                                                <div><a href="#">Alvin</a><a href="#!" class="secondary-content">
-                                                    <i class="material-icons">grade</i></a>
-                                                </div>
-                                            </li>
+                                            @endforeach
                                             
                                             </div>
                                         </div>

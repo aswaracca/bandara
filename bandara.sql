@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 24, 2017 at 06:15 AM
+-- Generation Time: Dec 24, 2017 at 05:47 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -31,7 +31,7 @@ CREATE TABLE `berita` (
   `judul` varchar(100) NOT NULL,
   `teks` text NOT NULL,
   `gambar` varchar(100) NOT NULL,
-  `jenis` enum('berita','promo') NOT NULL,
+  `jenis` enum('event','promo') NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -41,10 +41,10 @@ CREATE TABLE `berita` (
 --
 
 INSERT INTO `berita` (`id_berita`, `judul`, `teks`, `gambar`, `jenis`, `updated_at`, `created_at`) VALUES
-(4, 'Asdasdas', '<p>sdasda dasdasdas dsa dasd asdasdasdasd asdasd asd asdasd asd as das asddsa das dadasdasadsdsdasasddasdas&nbsp;</p>', '20171115043118.jpg', 'berita', '2017-11-15 08:31:20', '2017-11-15 08:31:20'),
+(4, 'Asdasdas', '<p>sdasda dasdasdas dsa dasd asdasdasdasd asdasd asd asdasd asd as das asddsa das dadasdasadsdsdasasddasdas&nbsp;</p>', '20171115043118.jpg', '', '2017-11-15 08:31:20', '2017-11-15 08:31:20'),
 (5, 'Jsdasdasdasd', '<p>as asd as dsa dsad dasdas dasad sad ads&nbsp;</p>', '20171115043434.jpg', 'promo', '2017-11-15 08:34:35', '2017-11-15 08:34:35'),
-(6, 'JUUUUdull', '&lt;p&gt;cas ds asadssad adsadsdasads&amp;nbsp;&lt;/p&gt;', '20171121034512.JPG', 'berita', '2017-11-20 19:45:12', '2017-11-20 19:45:12'),
-(7, 'Jkj', '<p>jjkjkjkjkjkjkjk</p>', '20171121035246.JPG', 'berita', '2017-11-20 19:52:46', '2017-11-20 19:52:46');
+(6, 'JUUUUdull', '&lt;p&gt;cas ds asadssad adsadsdasads&amp;nbsp;&lt;/p&gt;', '20171121034512.JPG', '', '2017-11-20 19:45:12', '2017-11-20 19:45:12'),
+(7, 'Jkj', '<p>jjkjkjkjkjkjkjk</p>', '20171121035246.JPG', '', '2017-11-20 19:52:46', '2017-11-20 19:52:46');
 
 -- --------------------------------------------------------
 
@@ -61,6 +61,10 @@ CREATE TABLE `profil` (
   `telpon` varchar(20) NOT NULL,
   `suka` int(11) DEFAULT NULL,
   `tdk_suka` int(11) DEFAULT NULL,
+  `nama_kontak` varchar(255) DEFAULT NULL,
+  `posisi_kontak` varchar(255) DEFAULT NULL,
+  `fb` varchar(255) DEFAULT NULL,
+  `youtube` varchar(255) DEFAULT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -69,29 +73,30 @@ CREATE TABLE `profil` (
 -- Dumping data for table `profil`
 --
 
-INSERT INTO `profil` (`id_profil`, `nama`, `teks`, `gambar`, `email`, `telpon`, `suka`, `tdk_suka`, `updated_at`, `created_at`) VALUES
-(1, 'Angkasa Pura', 'asdasd jcxj xcj jx cjn xjnx cjncx ncxkjcxnj cxjn cx cnjcx jncx jn cxnjxc jn cxn cxnxc nklcxk jcxnjnxck jnxcjn kxjcnk jnxckjn kxjcn kjxcn kjxnckj nxckj njkcxn xcn kjnxckj ncxj nkxcn kjxncj nxjcn kjxnc kjxcn ,cx', '20171115022016.JPG', 'angkasapura@aa.com', '0812345678', 2, 2, '2017-11-23 01:04:53', '0000-00-00 00:00:00');
+INSERT INTO `profil` (`id_profil`, `nama`, `teks`, `gambar`, `email`, `telpon`, `suka`, `tdk_suka`, `nama_kontak`, `posisi_kontak`, `fb`, `youtube`, `updated_at`, `created_at`) VALUES
+(1, 'Angkasa Pura', 'asdasd jcxj xcj jx cjn xjnx cjncx ncxkjcxnj cxjn cx cnjcx jncx jn cxnjxc jn cxn cxnxc nklcxk jcxnjnxck jnxcjn kxjcnk jnxckjn kxjcn kjxcn kjxnckj nxckj njkcxn xcn kjnxckj ncxj nkxcn kjxncj nxjcn kjxnc kjxcn ,cx', '20171115022016.JPG', 'angkasapura@aa.com', '0812345678', 9, 2, 'Aswar Acca', 'Project Manajer', 'https://facebook.com', 'https://youtube.com', '2017-12-23 20:30:17', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `suka`
+-- Table structure for table `survey`
 --
 
-CREATE TABLE `suka` (
-  `id_suka` int(11) NOT NULL,
+CREATE TABLE `survey` (
+  `id_survey` int(11) NOT NULL,
+  `nama_survey` varchar(255) NOT NULL,
   `suka` int(11) NOT NULL,
   `tdk_suka` int(11) NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 --
--- Dumping data for table `suka`
+-- Dumping data for table `survey`
 --
 
-INSERT INTO `suka` (`id_suka`, `suka`, `tdk_suka`, `updated_at`, `created_at`) VALUES
-(1, 0, 0, '2017-11-09 19:05:19', '0000-00-00 00:00:00');
+INSERT INTO `survey` (`id_survey`, `nama_survey`, `suka`, `tdk_suka`, `updated_at`, `created_at`) VALUES
+(1, 'Kebersihann', 2, 1, '2017-12-23 20:06:57', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -103,8 +108,10 @@ CREATE TABLE `tenan` (
   `id_tenan` int(11) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `status` enum('show','hide') NOT NULL,
+  `kategori` enum('rnb','retails','services','support') DEFAULT NULL,
   `logo` varchar(100) NOT NULL,
   `map` varchar(100) NOT NULL,
+  `lihat` int(11) NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
@@ -113,9 +120,10 @@ CREATE TABLE `tenan` (
 -- Dumping data for table `tenan`
 --
 
-INSERT INTO `tenan` (`id_tenan`, `nama`, `status`, `logo`, `map`, `updated_at`, `created_at`) VALUES
-(1, 'Asdasdasdasd', 'show', '20171120061858.jpg', '20171120061900.mp4', '2017-11-19 22:19:00', '2017-11-19 22:19:00'),
-(2, 'Exomatik', 'show', '20171122012130.png', '20171122012131.mp4', '2017-11-21 17:21:31', '2017-11-21 17:21:31');
+INSERT INTO `tenan` (`id_tenan`, `nama`, `status`, `kategori`, `logo`, `map`, `lihat`, `updated_at`, `created_at`) VALUES
+(1, 'Asdasdasdasd', 'show', 'rnb', '20171120061858.jpg', '20171120061900.mp4', 2, '2017-12-23 17:39:54', '2017-11-19 22:19:00'),
+(2, 'Exomatik', 'show', 'retails', '20171122012130.png', '20171122012131.mp4', 2, '2017-12-23 17:39:57', '2017-11-21 17:21:31'),
+(3, 'Asd Asdasdas', 'show', 'services', '20171223054720.jpg', '20171223054722.mp4', 3, '2017-12-23 17:39:58', '2017-12-23 09:47:22');
 
 -- --------------------------------------------------------
 
@@ -163,10 +171,10 @@ ALTER TABLE `profil`
   ADD PRIMARY KEY (`id_profil`);
 
 --
--- Indexes for table `suka`
+-- Indexes for table `survey`
 --
-ALTER TABLE `suka`
-  ADD PRIMARY KEY (`id_suka`);
+ALTER TABLE `survey`
+  ADD PRIMARY KEY (`id_survey`);
 
 --
 -- Indexes for table `tenan`
@@ -195,15 +203,15 @@ ALTER TABLE `berita`
 ALTER TABLE `profil`
   MODIFY `id_profil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT for table `suka`
+-- AUTO_INCREMENT for table `survey`
 --
-ALTER TABLE `suka`
-  MODIFY `id_suka` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `survey`
+  MODIFY `id_survey` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `tenan`
 --
 ALTER TABLE `tenan`
-  MODIFY `id_tenan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_tenan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `users`
 --
