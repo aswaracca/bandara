@@ -410,7 +410,7 @@
                         </div>
 
                         <div class="col s2 waves-effect waves-light" onclick="Materialize.toast('Survey', 4000,'',function(){alert('Your toast was dismissed')})">
-                          <a href="survey.html" title="">
+                          <a href="{{url('survey')}}" title="">
                            <div class="blue darken-4 z-depth-5" style="text-align: center; padding-top: 15px; padding-bottom: 1px; ">   
                                     <i class="material-icons small white-text">view_list</i>
                                     <p class="promo-caption white-text"><b>SURVEY</b></p>                
@@ -419,26 +419,26 @@
                         </div>
 
                         <div class="col s2 waves-effect waves-light" onclick="Materialize.toast('Survey', 4000,'',function(){alert('Your toast was dismissed')})">
-                          <a href="promo-event.html" title="">
+                          <a href="{{url('promo-event')}}" title="">
                            <div class="blue darken-4 z-depth-5" style="text-align: center; padding-top: 15px; padding-bottom: 1px; ">   
-                                    <i class="material-icons small white-text">style</i>
-                                    <p class="promo-caption white-text"><b>PROMO & EVENT</b></p>                
+                                <i class="material-icons small white-text">style</i>
+                                <p class="promo-caption white-text"><b>PROMO & EVENT</b></p>                
                             </div>
                             </a>
                         </div>
                         
                                                         
                         <div class="col s2 waves-effect waves-light" onclick="Materialize.toast('Airport Profile', 4000,'',function(){alert('Your toast was dismissed')})">
-                          <a href="profile.html" title="">
-                           <div class="blue darken-4 z-depth-5" style="text-align: center; padding-top: 15px; padding-bottom: 1px; ">                         
-                                    <i class="material-icons small white-text">business</i>
-                                    <p class="promo-caption white-text"><b>AIRPORT PROFILE</b></p>                
+                          <a href="{{url('profil')}}" title="">
+                           <div class="blue darken-4 z-depth-5" style="text-align: center; padding-top: 15px; padding-bottom: 1px; ">
+                              <i class="material-icons small white-text">business</i>
+                              <p class="promo-caption white-text"><b>AIRPORT PROFILE</b></p>                
                             </div>
                           </a>
                         </div>
 
                         <div class="col s2 waves-effect waves-light"onclick="Materialize.toast('Welcome', 4000,'',function(){alert('Your toast was dismissed')})">
-                          <a href="contact.html" title="">
+                          <a href="{{url('contact')}}" title="">
                             <div class="blue darken-4 z-depth-5" style="text-align: center; padding-top: 15px; padding-bottom: 1px; ">                          
                                     <i class="material-icons small white-text">contact_phone</i>
                                     <p class="promo-caption white-text"><b>CONTACT US</b></p>                                            
@@ -454,17 +454,15 @@
 <script src="{{asset('home/js/vpqzwe.js')}}"></script>
 <script  src="{{asset('home/js/index.js')}}"></script>
 <!-- Autocomplete end -->
-
-
-    <!-- preloading -->
-      <script type="text/javascript" src="{{asset('home/js/putar.js')}}" ></script>
+<!-- preloading -->
+<script type="text/javascript" src="{{asset('home/js/putar.js')}}" ></script>
 
     <!-- preloading END -->
   <!--  Scripts-->
-  <!-- <script src="{{asset('home/https://code.jquery.com/jquery-2.1.1.min.js')}}"></script> -->
-  <script src="{{asset('home/js/materialize.js')}}"></script>
-  <script src="{{asset('home/js/init.js')}}"></script>
-  <script src="{{asset('home/js/hammer.min.js')}}"></script>
+<!-- <script src="{{asset('home/https://code.jquery.com/jquery-2.1.1.min.js')}}"></script> -->
+<script src="{{asset('home/js/materialize.js')}}"></script>
+<script src="{{asset('home/js/init.js')}}"></script>
+<script src="{{asset('home/js/hammer.min.js')}}"></script>
 
   <!-- tenan -->
      <!-- jQuery -->

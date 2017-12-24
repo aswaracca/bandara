@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Model\ProfileModel;
 use App\Model\TenanModel;
 use App\Model\BeritaModel;
+use App\Model\SurveyModel;
 
 class HomePageController extends Controller
 {
@@ -31,33 +32,33 @@ class HomePageController extends Controller
             return 'save';
         }
 
-    public function viewProfil(){
-        $data = ProfileModel::find(1);
-        $news = BeritaModel::take(3)->get();
-        return view('homepage.profil',compact('data','news'));
-    }
     public function viewJadwal(){
-        $profil = ProfileModel::find(1);
-        $news = BeritaModel::take(3)->get();
-        return view('homepage.jadwal',compact('news','profil'));
+        return view('homepage.jadwal');
     }
 
-    public function viewBerita($id){
-        $profil = ProfileModel::find(1);
-        $data = BeritaModel::find($id);
-        $news = BeritaModel::take(3)->get();
-        return view('homepage.berita',compact('data','news','profil'));
+    public function viewSurvey(){
+        $survey = SurveyModel::all();
+        return view('homepage.survey',compact('survey'));
+    }
+        public function klikSurvey($id,$tanda){
+            $profil = ProfileModel::find(1);
+            $profil->suka = $profil->suka+1;
+            $profil->save();
+            return $tanda;
+        }
+
+    public function viewProfil(){
+        return view('homepage.profil');
     }
 
-    public function suka(){
-        $profil = ProfileModel::find(1);
-        $profil->suka = $profil->suka+1;
-        $profil->save();
+    public function viewPromo(){
+        return view('homepage.promo');
     }
-    public function tidakSuka(){
-        $profil = ProfileModel::find(1);
-        $profil->tdk_suka = $profil->tdk_suka+1;
-        $profil->save();   
+    public function viewDetailPromo($id){
+        return view('homepage.promo-detail');
+    }
+    public function viewContact(){
+        return view('homepage.contact');
     }
 
 }

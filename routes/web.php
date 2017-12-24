@@ -54,12 +54,13 @@ Route::get('tenan/{kategori}','HomePageController@viewTenan');
 Route::get('tenan/populer/{id}','HomePageController@populerTenan');
 Route::get('profil','HomePageController@viewProfil');
 Route::get('jadwal','HomePageController@viewJadwal');
-Route::get('news-promo/{id}','HomePageController@viewBerita');
-
+Route::get('survey','HomePageController@viewSurvey');
+Route::get('promo-event','HomePageController@viewPromo');
+Route::get('promo-event/{id}','HomePageController@viewDetailPromo');
+Route::get('contact','HomePageController@viewContact');
 
 Route::get('suka','HomePageController@suka');
 Route::get('tidak-suka','HomePageController@tidakSuka');
-
 
 Route::get('login','Auth\LoginController@viewLogin');
 Route::post('login','Auth\LoginController@postLogin');
