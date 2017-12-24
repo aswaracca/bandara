@@ -202,14 +202,16 @@
                         <div class="collapsible-header white-text" style="background-color: #16A2E7FF; margin-top: 9px;"><i class="material-icons white-text">map</i>MAPS</div>
                                <!-- slider -->
                                 @foreach($data as $video)
-                            <video  autoplay loop muted width="100%" height="500">
+                            <div style="width: 1405px; height: 650px;" >
+                            <video  autoplay loop muted width="100%">
                                 <source src="{{asset('images/map/20171224042758.mp4')}}" type="video/mp4">
                             </video>
+                            </div>
                                @endforeach
                       </div>
                   </div>
             </div>
-        
+
 
         <!-- slider -->
         <script type="text/javascript">jssor_1_slider_init();</script>
