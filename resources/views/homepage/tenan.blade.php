@@ -80,13 +80,10 @@
                       <div class="col s12" style="padding-bottom: 0px;">
                         <div class="collapsible-header white-text" style="background-color: #16A2E7FF; margin-top: 9px;"><i class="material-icons white-text">map</i>MAPS</div>
                                <!-- slider -->
-                                @foreach($data as $video)
                             <div style="width: 1405px; height: 650px;" >
-                            <video  autoplay loop muted width="100%">
-                                <source src="{{asset('images/map/20171224042758.mp4')}}" type="video/mp4">
-                            </video>
+                                    <img src="{{asset('images/gambar/maps.png')}}" alt="" class="img-responsive">
                             </div>
-                               @endforeach
+                               
                       </div>
                   </div>
             </div>
