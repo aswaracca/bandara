@@ -83,6 +83,14 @@
                             <div style="width: 1405px; height: 650px;" >
                                     <img src="{{asset('images/gambar/maps.png')}}" alt="" class="img-responsive">
                             </div>
+
+                          <!--    @foreach($data as $video)
+                            <div style="width: 1405px; height: 650px;" >
+                            <video  autoplay loop muted width="100%">
+                                <source src="{{asset('images/map/20171224042758.mp4')}}" type="video/mp4">
+                            </video>
+                            </div>
+                               @endforeach -->
                                
                       </div>
                   </div>
