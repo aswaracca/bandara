@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="{{asset('home/css/materialize.css')}}" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="{{asset('home/css/style.css')}}" type="text/css" rel="stylesheet" media="screen,projection"/>
-
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
 <!-- background -->
 <style type="text/css" media="screen">
@@ -146,7 +146,7 @@
 
     <!-- preloading END -->
   <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  
   <script src="{{asset('home/js/materialize.js')}}"></script>
   <script src="{{asset('home/js/init.js')}}"></script>
   <script src="{{asset('home/js/hammer.min.js')}}"></script>
