@@ -25,12 +25,15 @@ class HomePageController extends Controller
         $populer = TenanModel::orderBy('lihat','desc')->limit(10)->get();
         return view('homepage.tenan',compact('data','populer'));
     }
-        public function populerTenan($id){
+        public function detailTenan($jenis,$id){
             $tenan = TenanModel::find($id);
-
-            $tenan->lihat = $tenan->lihat+1;
-            $tenan->save();
-            return 'save';
+            if($kategori == 'all')
+                $data = TenanModel::where('status','show')->orderBy('nama','asc')->get();
+            elseif($kategori !='all')
+                $data = TenanModel::where('status','show')->where('kategori',$kategori)->orderBy('nama','asc')->get();
+            
+            $populer = TenanModel::orderBy('lihat','desc')->limit(10)->get();
+            return view('homepage.tenan',compact('data','populer','tenan'));
         }
 
     public function viewJadwal(){
