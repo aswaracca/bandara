@@ -23,7 +23,7 @@ class HomePageController extends Controller
             $data = TenanModel::where('status','show')->where('kategori',$kategori)->orderBy('nama','asc')->get();
         
         $populer = TenanModel::orderBy('lihat','desc')->limit(10)->get();
-        return view('homepage.tenan',compact('data','populer'));
+        return view('homepage.tenan',compact('data','populer','kategori'));
     }
         public function detailTenan($kategori,$id){
             $tenan = TenanModel::find($id);

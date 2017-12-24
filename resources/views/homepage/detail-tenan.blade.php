@@ -158,7 +158,7 @@
                                         <div class='hidden-scrollbar'>
                                             <div class='inner'>
                                             @foreach($populer as $pop)
-                                            <a href="{{url('tenan/'.$kategori.'/'.$pop->id_tenan)}};"><li class="collection-item dismissable">
+                                            <a href="{{url('tenan/'.$kategori.'/'.$pop->id_tenan)}}"><li class="collection-item dismissable">
                                                 <div>{{ucwords($pop->nama)}}<span class="secondary-content">
                                                     <i class="material-icons">grade</i></span>
                                                 </div>
