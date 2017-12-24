@@ -86,10 +86,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <li class="header">M E N U</li>
         <!-- Optionally, you can add icons to the links -->
         <li class="active"><a href="<?=url('administrator')?>"><i class="fa fa-home"></i> <span>Beranda</span></a></li>
-        <li><a href="<?=url('administrator/tenan')?>"><i class="fa fa-user"></i> <span>Tenan</span></a></li>
-        <li><a href="<?=url('administrator/berita-promo')?>"><i class="fa fa-user"></i> <span>Berita dan Promo</span></a></li>
-        <li><a href="<?=url('administrator/profil')?>"><i class="fa fa-user"></i> <span>Profil dan Kontak Kami</span></a></li>
-        <li><a href="<?=url('administrator/akun')?>"><i class="fa fa-user"></i> <span>Akun</span></a></li>
+        <li><a href="<?=url('administrator/tenan')?>"><span>Tenan</span></a></li>
+        <li><a href="<?=url('administrator/berita-promo')?>"><span>Promo dan Event</span></a></li>
+        <li><a href="<?=url('administrator/survey')?>"><span>Survey</span></a></li>
+        <li><a href="<?=url('administrator/profil')?>"><span>Profil dan Kontak Kami</span></a></li>
+        <li><a href="<?=url('administrator/akun')?>"><span>Akun</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>

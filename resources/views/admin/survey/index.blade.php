@@ -9,7 +9,7 @@
                   <i class="fa fa-dashboard"></i> Beranda
               </li>
               <li class="active">
-                  Tenan
+                  Survey
               </li>
           </ol>
       </div>
@@ -28,7 +28,7 @@
     <div class="col-md-12">
       <div class="box box-primary">
         <div class="box-header">
-          <h3 class="box-title">Daftar Tenan</h3>
+          <h3 class="box-title">Data Survey</h3>
           <div class="box-tools pull-right">
             <div class="has-feedback">
             </div>
@@ -36,59 +36,33 @@
         </div>
         <!-- /.box-header -->
         <div class="box-body">
-          <a class="btn btn-default btn-sm" href="<?=url('administrator/tenan/tambah')?>"><i class="fa fa-plus"></i> Tambah Tenan</a>
-          <div class="pull-right">
-            <?=$tenan->firstItem().'-'.$tenan->lastItem().'/'.$tenan->total()?>
-            <div class="btn-group">
-              <a href="<?=$tenan->previousPageUrl()?>" class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i></a>
-              <a href="<?=$tenan->nextPageUrl()?>" class="btn btn-default btn-sm"><i class="fa fa-chevron-right"></i></a>
-            </div>
-            <!-- /.btn-group -->
-          </div>
+          <a class="btn btn-default btn-sm" href="<?=url('administrator/survey/tambah')?>"><i class="fa fa-plus"></i> Tambah Survey</a>
+
           <table class="table table-bordered table-striped" style="margin: 5px 0">
             <thead>
             <tr>
-              <th width="5%">No</th>
-              <th width="8%">Logo</th>
-              <th width="50%">Nama</th>
-              <th width="17%">Status</th>
-              <th width="20%">Aksi</th>
+              <th width="10%">No</th>
+              <th width="35%">Nama Survey</th>
+              <th width="20%">Suka</th>
+              <th width="20%">Tidak Suka</th>
+              <th width="15%">Aksi</th>
             </tr>
             </thead>
             <tbody>
-            <?php $i=1; foreach ($tenan as $tenans) {?>
+            <?php $i=1; foreach ($survey as $srv) {?>
             <tr>
               <td><?=$i++?></td>
-              <td><img src="<?=asset('images/logo/thumb/'.$tenans->logo)?>" class="img-responsive" alt="Logo"></td>
-              <td><?=$tenans->nama?></td>
-              <td><label class="label label-warning"><?=ucfirst($tenans->status)?></label></td>
+              <td>{{$srv->nama_survey}}</td>
+              <td><?=$srv->suka?></td>
+              <td><?=$srv->tdk_suka?></td>
               <td>
-                <a href="<?=url('administrator/tenan/'.$tenans->id_tenan)?>" class="btn btn-info"> <i class="fa fa-pencil"></i></a>
-                <a href="<?=url('administrator/tenan/hapus/'.$tenans->id_tenan)?>" class="btn btn-danger"> <i class="fa fa-trash"></i></a>
+                <a href="<?=url('administrator/survey/'.$srv->id_survey)?>" class="btn btn-info"> <i class="fa fa-pencil"></i></a>
+                <a href="<?=url('administrator/survey/hapus/'.$srv->id_survey)?>" class="btn btn-danger"> <i class="fa fa-trash"></i></a>
               </td>
             </tr>
             <?php } ?>
             </tbody>
-            <tfoot>
-            <tr>
-              <th>No</th>
-              <th>Logo</th>
-              <th>Nama</th>
-              <th>Status</th>
-              <th>Aksi</th>
-            </tr>
-            </tfoot>
           </table>
-          <div class="pull-right">
-            <div class="pull-right">
-            <?=$tenan->firstItem().'-'.$tenan->lastItem().'/'.$tenan->total()?>
-            <div class="btn-group">
-              <a href="<?=$tenan->previousPageUrl()?>" class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i></a>
-              <a href="<?=$tenan->nextPageUrl()?>" class="btn btn-default btn-sm"><i class="fa fa-chevron-right"></i></a>
-            </div>
-          </div>
-            <!-- /.btn-group -->
-          </div>
         </div>
         <!-- /.box-body -->
       </div>

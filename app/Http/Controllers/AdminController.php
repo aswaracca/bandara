@@ -18,9 +18,9 @@ class AdminController extends Controller
     	else $pSuka = 0;
     	if($profil->suka>0) $pTdkSuka = ($profil->tdk_suka/($profil->suka+$profil->tdk_suka))*100;
     	else $pTdkSuka = 0;
-    	$berita 	= BeritaModel::where('jenis','berita')->orderBy('id_berita','desc')->take(5)->get();
+    	$event 	= BeritaModel::where('jenis','event')->orderBy('id_berita','desc')->take(5)->get();
     	$promo 		= BeritaModel::where('jenis','promo')->orderBy('id_berita','desc')->take(5)->get();
-    	return view('admin.beranda.index',compact('berita','promo','profil','pSuka','pTdkSuka'));
+    	return view('admin.beranda.index',compact('event','promo','profil','pSuka','pTdkSuka'));
     }
 	
 	

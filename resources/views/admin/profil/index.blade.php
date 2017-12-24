@@ -59,6 +59,7 @@
                 * Input untuk mengganti gambar
               </div>
             </div>
+            
             <div class="form-group">
               <div class="col-sm-offset-2 col-sm-10">
                 <button type="submit" class="btn btn-danger" style="margin-bottom: 50px ">Simpan</button>
@@ -80,6 +81,18 @@
           <form class="form-horizontal" action="<?=url('administrator/kontak')?>" method="post">
             {{csrf_field()}}
             <div class="form-group">
+              <label for="inputName" class="col-sm-2 control-label">Nama Kontak</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" name="nama_kontak" value="<?=$data->nama_kontak?>" placeholder="Masukkan Nama Kontak.." required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputName" class="col-sm-2 control-label">Posisi Kontak</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" name="posisi_kontak" value="<?=$data->posisi_kontak?>" placeholder="Masukkan Posisi Kontak.." required>
+              </div>
+            </div>
+            <div class="form-group">
               <label for="inputName" class="col-sm-2 control-label">E-mail</label>
               <div class="col-sm-9">
                 <input type="email" class="form-control" name="email" maxlength="50" value="<?=$data->email?>" placeholder="Masukkan Email.." required>
@@ -89,6 +102,22 @@
               <label for="inputName" class="col-sm-2 control-label">Nomor Telpon</label>
               <div class="col-sm-9">
                 <input type="number" class="form-control" name="telpon" maxlength="50" value="<?=$data->telpon?>" placeholder="Masukkan Nomor Telpon.." required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputName" class="col-sm-2 control-label">Link Facebook</label>
+
+              <div class="col-sm-9">
+                <input type="url" name="fb" class="form-control" value="<?=$data->fb?>">
+                *boleh dikosongkan
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputName" class="col-sm-2 control-label">Link Youtube</label>
+
+              <div class="col-sm-9">
+                <input type="url" name="youtube" class="form-control"  value="<?=$data->youtube?>">
+                *boleh dikosongkan
               </div>
             </div>
             <div class="form-group">

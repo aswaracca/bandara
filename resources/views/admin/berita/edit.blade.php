@@ -39,7 +39,7 @@
             <div class="form-group">
               <label>Jenis</label>
               <select class="form-control" name="jenis" required>
-                <option value="berita" <?php if($berita->jenis=='berita')echo 'selected' ?>>Berita</option>
+                <option value="event" <?php if($berita->jenis=='event')echo 'selected' ?>>Event</option>
                 <option value="promo" <?php if($berita->jenis=='promo')echo 'selected' ?>>Promo</option>
               </select>
             </div>

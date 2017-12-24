@@ -8,7 +8,7 @@
               <li >
                   <i class="fa fa-dashboard"></i> Beranda
               </li>
-              <li>Tenan</li>
+              <li>Survey</li>
               <li class="active">
                   Edit
               </li>
@@ -19,7 +19,7 @@
     <div class="col-md-12">
       <div class="box box-primary">
         <div class="box-header with-border">
-          <h3 class="box-title">Edit Tenan</h3>
+          <h3 class="box-title">Edit Survey</h3>
         </div>
         <!-- /.box-header -->
         @if (count($errors) > 0)
@@ -30,41 +30,13 @@
             </ul>
         @endif
         <!-- form start -->
-        <form role="form" method="post" action="<?=url('administrator/tenan/edit')?>" enctype="multipart/form-data">
+        <form role="form" method="post" action="<?=url('administrator/survey/edit')?>" enctype="multipart/form-data">
           <?=csrf_field()?>
-          <input type="hidden" name="id_tenan" value="<?=$detail->id_tenan?>">
+          <input type="hidden" name="id_survey" value="<?=$detail->id_survey?>">
           <div class="box-body">
             <div class="form-group">
-              <label>Nama Tenan</label>
-              <input type="text" class="form-control" name="nama" value="<?=$detail->nama?>" placeholder="Masukkan Nama Tenan..">
-            </div>
-            <div class="form-group">
-              <label>Status</label>
-              <select class="form-control" name="status" required>
-                <option value="show" <?php if ($detail->status =='show')echo 'selected';?>>Show</option>
-                <option value="hide" <?php if ($detail->status =='hide')echo 'selected';?>>Hide</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>Status</label>
-              <select class="form-control" name="kategori" required>
-                <option value="" disabled selected>Pilih Kategori</option>
-                <option value="rnb" <?php if ($detail->kategori =='rnb')echo 'selected';?>>R & B</option>
-                <option value="retails" <?php if ($detail->kategori =='retails')echo 'selected';?>>Retails</option>
-                <option value="services" <?php if ($detail->kategori =='services')echo 'selected';?>>Services</option>
-                <option value="support" <?php if ($detail->kategori =='support')echo 'selected';?>>Support</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>Gambar Logo</label>
-              <input type="file" name="logo" class="form-control">
-              <span>*Input untuk mengganti</span>
-              <p class="help-block">Max. 1 MB File Image</p>
-            </div>
-            <div class="form-group">
-              <label for="exampleInputFile">Gambar Map</label>
-              <input type="file" name="map" class="form-control">
-              <span>*Input untuk mengganti</span>
+              <label>Nama Survey</label>
+              <input type="text" class="form-control" name="nama_survey" value="<?=$detail->nama_survey?>" placeholder="Masukkan Survey..">
             </div>
           </div>
           <!-- /.box-body -->

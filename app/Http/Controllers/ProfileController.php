@@ -40,13 +40,21 @@ class ProfileController extends Controller
 	}
 	public function postKontak(Request $request){
 		$this->validate($request, [
+   			'nama_kontak' 	=> 'required',
+   			'posisi_kontak' => 'required',
    			'email' 		=> 'required|max:50',
    			'telpon' 		=> 'required|max:20',
+   			'fb' 			=> 'required',
+   			'youtube' 		=> 'required',
         ]);
 
 		$profil = ProfileModel::find(1);
+		$profil->nama_kontak = $request->nama_kontak;
+		$profil->posisi_kontak = $request->posisi_kontak;
 		$profil->email = $request->email;
 		$profil->telpon = $request->telpon;
+		$profil->fb = $request->fb;
+		$profil->youtube = $request->youtube;
 		
 		$profil->save();
         return redirect()->back()->with('pesan', 'Berhasil memperbaharui data !');

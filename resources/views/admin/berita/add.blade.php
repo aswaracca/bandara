@@ -38,7 +38,7 @@
             <div class="form-group">
               <label>Jenis</label>
               <select class="form-control" name="jenis" required>
-                <option value="berita">Berita</option>
+                <option value="event">Event</option>
                 <option value="promo">Promo</option>
               </select>
             </div>

@@ -8,8 +8,8 @@
             <h4><i class="icon fa fa-warning"></i> Hapus Data ?</h4>
             <p>Data tidak dapat dikembalikan setelah terhapus.</p>
             <p>
-            <a href="{{url('administrator/tenan')}}" class="btn btn-primary">Batal</a>
-            <a href="{{url('administrator/tenan/delete/'.$id)}}" class="btn btn-danger" style="margin-left: 10px;">Hapus</a>
+            <a href="{{url('administrator/survey')}}" class="btn btn-primary">Batal</a>
+            <a href="{{url('administrator/survey/delete/'.$id)}}" class="btn btn-danger" style="margin-left: 10px;">Hapus</a>
             </p>
           </div>
       </div>

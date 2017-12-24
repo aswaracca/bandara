@@ -63,7 +63,8 @@ class HomePageController extends Controller
         return view('homepage.promo-detail');
     }
     public function viewContact(){
-        return view('homepage.contact');
+        $profil = ProfileModel::find(1);
+        return view('homepage.contact',compact('profil'));
     }
 
 }

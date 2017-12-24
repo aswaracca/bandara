@@ -8,7 +8,7 @@
               <li >
                   <i class="fa fa-dashboard"></i> Beranda
               </li>
-              <li>Tenan</li>
+              <li>Survey</li>
               <li class="active">
                   Tambah
               </li>
@@ -19,7 +19,7 @@
     <div class="col-md-12">
       <div class="box box-primary">
         <div class="box-header with-border">
-          <h3 class="box-title">Tambah Tenan</h3>
+          <h3 class="box-title">Tambah Survey</h3>
         </div>
         <!-- /.box-header -->
         @if (count($errors) > 0)
@@ -30,39 +30,12 @@
         </ul>
     @endif
         <!-- form start -->
-        <form role="form" method="post" action="<?=url('administrator/tenan/tambah')?>" enctype="multipart/form-data">
+        <form role="form" method="post" action="<?=url('administrator/survey/tambah')?>">
         <?=csrf_field()?>
           <div class="box-body">
             <div class="form-group">
-              <label>Nama Tenan</label>
-              <input type="text" class="form-control" name="nama" placeholder="Masukkan Nama Tenan.." required>
-            </div>
-            <div class="form-group">
-              <label>Status</label>
-              <select class="form-control" name="status" required>
-                <option value="show">Show</option>
-                <option value="hide">Hide</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>Status</label>
-              <select class="form-control" name="kategori" required>
-                <option value="" disabled selected>Pilih Kategori</option>
-                <option value="rnb">R & B</option>
-                <option value="retails">Retails</option>
-                <option value="services">Services</option>
-                <option value="support">Support</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>Gambar Logo</label>
-              <input type="file" name="logo" class="form-control" required>
-
-              <p class="help-block">Max. 1 MB File Image</p>
-            </div>
-            <div class="form-group">
-              <label for="exampleInputFile">Gambar Map</label>
-              <input type="file" name="map" class="form-control" required>
+              <label>Nama Survey</label>
+              <input type="text" class="form-control" name="nama_survey" placeholder="Masukkan Survey.." required>
             </div>
           </div>
           <!-- /.box-body -->
