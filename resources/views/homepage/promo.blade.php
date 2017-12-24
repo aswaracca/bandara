@@ -9,15 +9,17 @@
                 <div class="card-panel">
                     <div class="hidden-scrollbar">
                         <div class="inner-like">
+                            @foreach($promo as $prm)
                             <div class="row">
                                 <div class="col m3">
-                                    <img src="assets/images/img1.jpg" class="responsive-img" alt="">
+                                    <img src="{{asset('images/gambar/'.$prm->gambar)}}" class="responsive-img" alt="">
                                 </div>
                                 <div class="col m9">
-                                    <h5>Promo</h5><hr>
-                                    <p>We hope you have enjoyed using Materialize and if you feel like it has helped you out and want to support the team you can help us by donating or backing us on Patreon. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+                                    <h5>{{ucwords($prm->judul)}}</h5><hr>
+                                    <p><?=ucfirst($prm->teks)?></p>
                                 </div>
                             </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>   

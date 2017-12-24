@@ -17,13 +17,13 @@
                                             <h5 style="color: black">{{ucwords($svy->nama_survey)}}</h5>
                                         </td>
                                         <td width="20px">
-                                           <button class="waves-effect waves-light btn blue lighten-1">
+                                           <button class="waves-effect waves-light btn blue lighten-1" onclick="klikSurvey({{$svy->id_survey}},'like')">
                                                 <i class="material-icons prefix">thumb_up</i>
                                             </button>
                                         </td>
                                         <td width="20px">
-                                            <button class="waves-effect waves-light btn red lighten-1">
-                                                <i class="material-icons prefix ">thumb_down</i>
+                                            <button class="waves-effect waves-light btn red lighten-1" onclick="klikSurvey({{$svy->id_survey}},'dislike')">
+                                                <i class="material-icons prefix">thumb_down</i>
                                             </button>
                                         </td>
                                     </tr>
@@ -37,5 +37,11 @@
             </div>
         </div>
     </div>
-
+    <script type="text/javascript">
+        function klikSurvey(identitas,jenis){
+            $.get("{{url('survey')}}/"+identitas+"/"+jenis,function(data, status){
+                console.log(data);
+            });
+        }
+    </script>
 @endsection

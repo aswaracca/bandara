@@ -55,6 +55,7 @@ Route::get('tenan/populer/{id}','HomePageController@populerTenan');
 Route::get('profil','HomePageController@viewProfil');
 Route::get('jadwal','HomePageController@viewJadwal');
 Route::get('survey','HomePageController@viewSurvey');
+	Route::get('survey/{id}/{jenis}','HomePageController@klikSurvey');
 Route::get('promo-event','HomePageController@viewPromo');
 Route::get('promo-event/{id}','HomePageController@viewDetailPromo');
 Route::get('contact','HomePageController@viewContact');

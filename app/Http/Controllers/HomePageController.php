@@ -40,19 +40,24 @@ class HomePageController extends Controller
         $survey = SurveyModel::all();
         return view('homepage.survey',compact('survey'));
     }
-        public function klikSurvey($id,$tanda){
-            $profil = ProfileModel::find(1);
-            $profil->suka = $profil->suka+1;
-            $profil->save();
-            return $tanda;
+        public function klikSurvey($id,$jenis){
+            $survey = SurveyModel::find($id);
+            if($jenis == 'like')
+                $survey->suka = $survey->suka+1;
+            elseif($jenis == 'dislike')
+                $survey->tdk_suka = $survey->tdk_suka+1;
+            $survey->save();
+            return 'save';
         }
 
     public function viewProfil(){
-        return view('homepage.profil');
+        $profil = ProfileModel::find(1);
+        return view('homepage.profil',compact('profil'));
     }
 
     public function viewPromo(){
-        return view('homepage.promo');
+        $promo = BeritaModel::all();
+        return view('homepage.promo',compact('promo'));
     }
     public function viewDetailPromo($id){
         return view('homepage.promo-detail');
