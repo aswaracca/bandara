@@ -82,7 +82,7 @@
                                <!-- slider -->
                             <div style="width: 1405px; height: 650px;" >
                             <video autoplay loop muted width="100%">
-                                <source src="{{asset('images/map/20171224042758.mp4')}}" type="video/mp4">
+                                <source src="{{asset('images/map/'.$tenan->map)}}" type="video/mp4">
                             </video>
                             </div>
                       </div>
@@ -116,7 +116,7 @@
                                                     <div class='inner-search'>
                                                         <ul id="myUL" class="collection" style="margin-top: 0px; margin-bottom: 0px;">
                                                           @foreach($data as $video)  
-                                                            <li><a href="javascript:;">{{$video->nama}}</a></li>
+                                                            <li><a href="{{url('tenan/'.$kategori.'/'.$video->id_tenan)}}">{{$video->nama}}</a></li>
                                                           @endforeach
                                                         </ul>                                                                                   
                                                     </div>
@@ -158,11 +158,12 @@
                                         <div class='hidden-scrollbar'>
                                             <div class='inner'>
                                             @foreach($populer as $pop)
-                                            <li class="collection-item dismissable" onclick="enableAutoplay({{$pop->id_tenan}})">
-                                                <div><a href="javascript:;">{{ucwords($pop->nama)}}</a><a href="javascript:;" class="secondary-content">
-                                                    <i class="material-icons">grade</i></a>
+                                            <a href="{{url('tenan/'.$kategori.'/'.$pop->id_tenan)}};"><li class="collection-item dismissable">
+                                                <div>{{ucwords($pop->nama)}}<span class="secondary-content">
+                                                    <i class="material-icons">grade</i></span>
                                                 </div>
                                             </li>
+                                            </a>
                                             @endforeach
                                             
                                             </div>

@@ -63,7 +63,7 @@ Route::post('administrator/akun','AkunController@postAkun')->middleware('adminis
 
 Route::get('/','HomePageController@viewBeranda');
 Route::get('tenan/{kategori}','HomePageController@viewTenan');
-Route::get('tenan/populer/{id}','HomePageController@populerTenan');
+Route::get('tenan/{kategori}/{id}','HomePageController@detailTenan');
 Route::get('profil','HomePageController@viewProfil');
 Route::get('jadwal','HomePageController@viewJadwal');
 Route::get('survey','HomePageController@viewSurvey');
