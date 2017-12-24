@@ -261,7 +261,7 @@
       echo "if(identitas == ".$video->id_tenan."){";
       echo "vid".$video->id_tenan.".autoplay = true;";
       echo "vid".$video->id_tenan.".load();";
-      echo "viewDataPopuler(".$video->id_tenan.")";
+      echo "viewDataPopuler(".$video->id_tenan.");";
 
       echo "}";
       // batas looping
