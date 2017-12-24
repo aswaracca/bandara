@@ -146,7 +146,7 @@
 
     <!-- preloading END -->
   <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js')}}"></script>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="{{asset('home/js/materialize.js')}}"></script>
   <script src="{{asset('home/js/init.js')}}"></script>
   <script src="{{asset('home/js/hammer.min.js')}}"></script>
